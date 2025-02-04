@@ -22,16 +22,29 @@ namespace COMP003A.LectureActivity4_1
                         }
                         else
                         {
-                            Console.WriteLine("Grade must be between 0 and 10");
+                            Console.WriteLine("Grade must be between 0 and 100");
                         }
                     }
                     else
                     {
                         Console.WriteLine("Invalid Input. Please enter a valid number");
+                        grade = -1;
                     }
                 }
-                    Console.WriteLine("Grade " + ": " + grad)
             }
+            double sum = 0;
+            for (int i = 0; i < grades.Length; i++)
+            {
+                sum += grades[i];
+            }
+            double average = sum / grades.Length;
+
+            Console.WriteLine("\nGrades:");
+            foreach (int grade in grades)
+            {
+                Console.WriteLine(grade);
+            }
+            Console.WriteLine($"Average Grade: {average:F2}");
         }
     }
 }
